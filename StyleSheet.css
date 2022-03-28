@@ -45,6 +45,7 @@ body {
 }
 .whiteKeys span {
     align-self: flex-end;
+    user-select: none;
 }
 .blackKeys{
     position: absolute;
@@ -94,7 +95,29 @@ body {
 }
 #circle span {
     position: absolute;
+    user-select: none;
 }
 #minorCircle span {
+    position: absolute;
+    user-select: none;
+}
+#majSelect {
+    background-color: #D6D6D6;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 1%;
+    user-select: none;
+}
+#minSelect {
+    background-color: #D6D6D6;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 1%;
+    user-select: none;
+}
+#selectContainer {
+    display: flex; 
+    flex-direction: row;
+    top: 580px;
     position: absolute;
 }

@@ -1,141 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Comparator</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link href="StyleSheet.css" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comparator</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link href="StyleSheet.css" rel="stylesheet" />
+  </head>
+  <body>
     <div id="innerBorder">
-        <div id="focusContainer">
-          <div id="pianoContainer">
-            <div class="whiteKeys" name="cn">
-              <span>C</span>
-              <div class="blackKeys" style="left: 23px;" name="csharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="dn">
-              <span>D</span>
-              <div class="blackKeys" style="left: 53px;" name="dsharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="en">
-              <span>E</span>
-            </div>
-            <div class="whiteKeys" name="fn">
-              <span>F</span>
-              <div class="blackKeys" style="left: 113px;" name="fsharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="gn">
-              <span>G</span>
-              <div class="blackKeys" style="left: 143px;" name="gsharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="an">
-              <span>A</span>
-              <div class="blackKeys" style="left: 173px;" name="asharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="bn">
-              <span>B</span>
-            </div>
-            <div class="whiteKeys" name="cn">
-              <span>C</span>
-              <div class="blackKeys" style="left: 233px;" name="csharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="dn">
-              <span>D</span>
-              <div class="blackKeys" style="left: 263px;" name="dsharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="en">
-              <span>E</span>
-            </div>
-            <div class="whiteKeys" name="fn">
-              <span>F</span>
-              <div class="blackKeys" style="left: 323px;" name="fsharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="gn">
-              <span>G</span>
-              <div class="blackKeys" style="left: 353px;" name="gsharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="an">
-              <span>A</span>
-              <div class="blackKeys" style="left: 383px;" name="asharp">
-
-              </div>
-            </div>
-            <div class="whiteKeys" name="bn">
-              <span>B</span>
-            </div>
-            <div class="whiteKeys" name="cn">
-              <span>C</span>
-            </div>
+      <div id="focusContainer">
+        <div id="pianoContainer">
+          <div class="whiteKeys" name="cn">
+            <span>C</span>
+            <div class="blackKeys" style="left: 23px" name="csharp"></div>
           </div>
-
-          <div id="circle">
-            <div class="lines" style="right: 175px;"></div>
-            <div class="lines" style="right: 175px; transform: rotate(90deg);"></div>
-            <div class="lines" style="right: 175px; transform: rotate(30deg);"></div>
-            <div class="lines" style="right: 175px; transform: rotate(-30deg);"></div>
-            <div class="lines" style="right: 175px; transform: rotate(60deg);"></div>
-            <div class="lines" style="right: 175px; transform: rotate(-60deg);"></div>
-            <span id="kf" style="left: 128px; top: 20px;">F</span>
-            <span id="kc" style="right: 130px; top: 20px;">C</span>
-            <span id="kbflat" style="left: 50px; top: 55px;">B♭</span>
-            <span id="kg" style="right: 60px; top: 55px;">G</span>
-            <span id="keflat" style="left: 15px; top: 120px;">E♭</span>
-            <span id="kd" style="right: 25px; top: 120px;">D</span>
-
-            <span id="kaflat" style="left: 15px; bottom: 120px;">A♭</span>
-            <span id="ka" style="right: 25px; bottom: 120px;">A</span>
-            <span id="kdflat" style="left: 50px; bottom: 55px;">D♭</span>
-            <span id="ke" style="right: 65px; bottom: 55px;">E</span>
-            <span id="kgflat" style="left: 115px; bottom: 15px;">G♭</span>
-            <span id="kb" style="right: 130px; bottom: 15px;">B</span>
-
-            <span id="kcsharp" style="left: 70px; bottom: 35px; font-size: 16px;">C#</span>
-            <span id="kfsharp" style="left: 150px; bottom: 3px; font-size: 16px;">F#</span>
-            <span id="kcflat" style="right: 95px; bottom: 15px; font-size: 16px;">C♭</span>
-
-            <div id="minorCircle">
-              <span id="kdm" style="left: 78px; top: 20px;">Dm</span>
-              <span id="kam" style="right: 78px; top: 20px;">Am</span>
-              <span id="kgm" style="left: 40px; top: 45px;">Gm</span>
-              <span id="kem" style="right: 40px; top: 45px;">Em</span>
-              <span id="kcm" style="left: 20px; top: 83px;">Cm</span>
-              <span id="kbm" style="right: 20px; top: 83px;">Bm</span>
-
-              <span id="kfm" style="left: 20px; bottom: 83px;">Fm</span>
-              <span id="kfsharpm" style="right: 20px; bottom: 83px;">F#m</span>
-              <span id="kbflatm" style="left: 28px; bottom: 45px;">B♭m</span>
-              <span id="kcsharpm" style="right: 35px; bottom: 45px;">C#m</span>
-              <span id="keflatm" style="left: 70px; bottom: 20px;">E♭m</span>
-              <span id="kgsharpm" style="right: 73px; bottom: 20px;">G#m</span>
-              <div id="uselessCircle"></div>
-
-            </div>
+          <div class="whiteKeys" name="dn">
+            <span>D</span>
+            <div class="blackKeys" style="left: 53px" name="dsharp"></div>
+          </div>
+          <div class="whiteKeys" name="en">
+            <span>E</span>
+          </div>
+          <div class="whiteKeys" name="fn">
+            <span>F</span>
+            <div class="blackKeys" style="left: 113px" name="fsharp"></div>
+          </div>
+          <div class="whiteKeys" name="gn">
+            <span>G</span>
+            <div class="blackKeys" style="left: 143px" name="gsharp"></div>
+          </div>
+          <div class="whiteKeys" name="an">
+            <span>A</span>
+            <div class="blackKeys" style="left: 173px" name="asharp"></div>
+          </div>
+          <div class="whiteKeys" name="bn">
+            <span>B</span>
+          </div>
+          <div class="whiteKeys" name="cn">
+            <span>C</span>
+            <div class="blackKeys" style="left: 233px" name="csharp"></div>
+          </div>
+          <div class="whiteKeys" name="dn">
+            <span>D</span>
+            <div class="blackKeys" style="left: 263px" name="dsharp"></div>
+          </div>
+          <div class="whiteKeys" name="en">
+            <span>E</span>
+          </div>
+          <div class="whiteKeys" name="fn">
+            <span>F</span>
+            <div class="blackKeys" style="left: 323px" name="fsharp"></div>
+          </div>
+          <div class="whiteKeys" name="gn">
+            <span>G</span>
+            <div class="blackKeys" style="left: 353px" name="gsharp"></div>
+          </div>
+          <div class="whiteKeys" name="an">
+            <span>A</span>
+            <div class="blackKeys" style="left: 383px" name="asharp"></div>
+          </div>
+          <div class="whiteKeys" name="bn">
+            <span>B</span>
+          </div>
+          <div class="whiteKeys" name="cn">
+            <span>C</span>
           </div>
         </div>
+
+        <div id="circle">
+          <div class="lines" style="right: 175px"></div>
+          <div
+            class="lines"
+            style="right: 175px; transform: rotate(90deg)"
+          ></div>
+          <div
+            class="lines"
+            style="right: 175px; transform: rotate(30deg)"
+          ></div>
+          <div
+            class="lines"
+            style="right: 175px; transform: rotate(-30deg)"
+          ></div>
+          <div
+            class="lines"
+            style="right: 175px; transform: rotate(60deg)"
+          ></div>
+          <div
+            class="lines"
+            style="right: 175px; transform: rotate(-60deg)"
+          ></div>
+          <span id="kf" style="left: 128px; top: 20px">F</span>
+          <span id="kc" style="right: 130px; top: 20px">C</span>
+          <span id="kbflat" style="left: 50px; top: 55px">B♭</span>
+          <span id="kg" style="right: 60px; top: 55px">G</span>
+          <span id="keflat" style="left: 15px; top: 120px">E♭</span>
+          <span id="kd" style="right: 25px; top: 120px">D</span>
+
+          <span id="kaflat" style="left: 15px; bottom: 120px">A♭</span>
+          <span id="ka" style="right: 25px; bottom: 120px">A</span>
+          <span id="kdflat" style="left: 50px; bottom: 55px">D♭</span>
+          <span id="ke" style="right: 65px; bottom: 55px">E</span>
+          <span id="kgflat" style="left: 115px; bottom: 15px">G♭</span>
+          <span id="kb" style="right: 130px; bottom: 15px">B</span>
+
+          <span id="kcsharp" style="left: 70px; bottom: 35px; font-size: 16px"
+            >C#</span
+          >
+          <span id="kfsharp" style="left: 150px; bottom: 3px; font-size: 16px"
+            >F#</span
+          >
+          <span id="kcflat" style="right: 95px; bottom: 15px; font-size: 16px"
+            >C♭</span
+          >
+
+          <div id="minorCircle">
+            <span id="kdm" style="left: 78px; top: 20px">Dm</span>
+            <span id="kam" style="right: 78px; top: 20px">Am</span>
+            <span id="kgm" style="left: 40px; top: 45px">Gm</span>
+            <span id="kem" style="right: 40px; top: 45px">Em</span>
+            <span id="kcm" style="left: 20px; top: 83px">Cm</span>
+            <span id="kbm" style="right: 20px; top: 83px">Bm</span>
+
+            <span id="kfm" style="left: 20px; bottom: 83px">Fm</span>
+            <span id="kfsharpm" style="right: 20px; bottom: 83px">F#m</span>
+            <span id="kbflatm" style="left: 28px; bottom: 45px">B♭m</span>
+            <span id="kcsharpm" style="right: 35px; bottom: 45px">C#m</span>
+            <span id="keflatm" style="left: 70px; bottom: 20px">E♭m</span>
+            <span id="kgsharpm" style="right: 73px; bottom: 20px">G#m</span>
+            <div id="uselessCircle"></div>
+          </div>
+        </div>
+        <div id="selectContainer">
+          <div id="majSelect">
+            <span style="font-size: 20px;">Major Keys</span>
+            <br>
+            <input type="checkbox" id="C" onclick="">
+            <label for="C">C</label>
+            <br>
+            <input type="checkbox" id="G" onclick="">
+            <label for="G">G</label>
+            <br>
+            <input type="checkbox" id="D" onclick="">
+            <label for="D">D</label>
+            <br>
+            <input type="checkbox" id="A" onclick="">
+            <label for="A">A</label>
+            <br>
+            <input type="checkbox" id="E" onclick="">
+            <label for="E">E</label>
+            <br>
+            <input type="checkbox" id="B" onclick="">
+            <label for="B">B/C♭</label>
+            <br>
+            <input type="checkbox" id="Gflat" onclick="">
+            <label for="Gflat">G♭/F#</label>
+            <br>
+            <input type="checkbox" id="Dflat" onclick="">
+            <label for="Dflat">D♭/C#</label>
+            <br>
+            <input type="checkbox" id="Aflat" onclick="">
+            <label for="Aflat">A♭</label>
+            <br>
+            <input type="checkbox" id="Eflat" onclick="">
+            <label for="Eflat">E♭</label>
+            <br>
+            <input type="checkbox" id="Bflat" onclick="">
+            <label for="Bflat">B♭</label>
+            <br>
+            <input type="checkbox" id="F" onclick="">
+            <label for="F">F</label>
+          </div>
+  
+          <div id="minSelect">
+            <span style="font-size: 20px;">Minor Keys</span>
+            <br>
+            <input type="checkbox" id="Am" onclick="">
+            <label for="Am">Am</label>
+            <br>
+            <input type="checkbox" id="Em" onclick="">
+            <label for="Em">Em</label>
+            <br>
+            <input type="checkbox" id="Bm" onclick="">
+            <label for="Bm">Bm</label>
+            <br>
+            <input type="checkbox" id="Fsharpm" onclick="">
+            <label for="Fsharpm">F#m</label>
+            <br>
+            <input type="checkbox" id="Csharpm" onclick="">
+            <label for="Csharpm">C#m</label>
+            <br>
+            <input type="checkbox" id="Gsharpm" onclick="">
+            <label for="Gsharpm">G#m</label>
+            <br>
+            <input type="checkbox" id="Eflatm" onclick="">
+            <label for="Eflatm">E♭m</label>
+            <br>
+            <input type="checkbox" id="Bflatm" onclick="">
+            <label for="Bflatm">B♭m</label>
+            <br>
+            <input type="checkbox" id="Fm" onclick="">
+            <label for="Fflat">Fm</label>
+            <br>
+            <input type="checkbox" id="Cm" onclick="">
+            <label for="Cm">Cm</label>
+            <br>
+            <input type="checkbox" id="Gm" onclick="">
+            <label for="Gm">Gm</label>
+            <br>
+            <input type="checkbox" id="Dm" onclick="">
+            <label for="Dm">Dm</label>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-    <script type="text/javascript">
-        
-    </script>
+  </body>
+  <script type="text/javascript">
+    
+  </script>
 </html>

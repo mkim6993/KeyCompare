@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="cate.jpg">
     <title>Comparator</title>
     <link
       rel="stylesheet"
@@ -14,6 +15,7 @@
   <body>
     <div id="innerBorder">
       <div id="focusContainer">
+        <!-- Piano Keys -->
         <div id="pianoContainer">
           <div class="whiteKeys" name="cn">
             <span>C</span>
@@ -41,37 +43,39 @@
           <div class="whiteKeys" name="bn">
             <span>B</span>
           </div>
-          <div class="whiteKeys" name="cn">
+          <div class="whiteKeys" name="cn2">
             <span>C</span>
-            <div class="blackKeys" style="left: 233px" name="csharp"></div>
+            <div class="blackKeys" style="left: 233px" name="csharp2"></div>
           </div>
-          <div class="whiteKeys" name="dn">
+          <div class="whiteKeys" name="dn2">
             <span>D</span>
-            <div class="blackKeys" style="left: 263px" name="dsharp"></div>
+            <div class="blackKeys" style="left: 263px" name="dsharp2"></div>
           </div>
-          <div class="whiteKeys" name="en">
+          <div class="whiteKeys" name="en2">
             <span>E</span>
           </div>
-          <div class="whiteKeys" name="fn">
+          <div class="whiteKeys" name="fn2">
             <span>F</span>
-            <div class="blackKeys" style="left: 323px" name="fsharp"></div>
+            <div class="blackKeys" style="left: 323px" name="fsharp2"></div>
           </div>
-          <div class="whiteKeys" name="gn">
+          <div class="whiteKeys" name="gn2">
             <span>G</span>
-            <div class="blackKeys" style="left: 353px" name="gsharp"></div>
+            <div class="blackKeys" style="left: 353px" name="gsharp2"></div>
           </div>
-          <div class="whiteKeys" name="an">
+          <div class="whiteKeys" name="an2">
             <span>A</span>
-            <div class="blackKeys" style="left: 383px" name="asharp"></div>
+            <div class="blackKeys" style="left: 383px" name="asharp2"></div>
           </div>
-          <div class="whiteKeys" name="bn">
+          <div class="whiteKeys" name="bn2">
             <span>B</span>
           </div>
-          <div class="whiteKeys" name="cn">
+          <div class="whiteKeys" name="cn3">
             <span>C</span>
           </div>
         </div>
 
+        <!-- Circle of Fifths -->
+        <!-- lines -->
         <div id="circle">
           <div class="lines" style="right: 175px"></div>
           <div
@@ -94,6 +98,8 @@
             class="lines"
             style="right: 175px; transform: rotate(-60deg)"
           ></div>
+
+          <!-- Major Keys -->
           <span id="kf" style="left: 128px; top: 20px">F</span>
           <span id="kc" style="right: 130px; top: 20px">C</span>
           <span id="kbflat" style="left: 50px; top: 55px">B♭</span>
@@ -108,16 +114,11 @@
           <span id="kgflat" style="left: 115px; bottom: 15px">G♭</span>
           <span id="kb" style="right: 130px; bottom: 15px">B</span>
 
-          <span id="kcsharp" style="left: 70px; bottom: 35px; font-size: 16px"
-            >C#</span
-          >
-          <span id="kfsharp" style="left: 150px; bottom: 3px; font-size: 16px"
-            >F#</span
-          >
-          <span id="kcflat" style="right: 95px; bottom: 15px; font-size: 16px"
-            >C♭</span
-          >
+          <span id="kcsharp" style="left: 70px; bottom: 35px; font-size: 16px">C#</span>
+          <span id="kfsharp" style="left: 150px; bottom: 3px; font-size: 16px">F#</span>
+          <span id="kcflat" style="right: 95px; bottom: 15px; font-size: 16px">C♭</span>
 
+          <!-- Minor Keys -->
           <div id="minorCircle">
             <span id="kdm" style="left: 78px; top: 20px">Dm</span>
             <span id="kam" style="right: 78px; top: 20px">Am</span>
@@ -135,84 +136,87 @@
             <div id="uselessCircle"></div>
           </div>
         </div>
+
+        <!-- CheckBoxes for Major Keys -->
         <div id="selectContainer">
           <div id="majSelect">
             <span style="font-size: 20px;">Major Keys</span>
             <br>
-            <input type="checkbox" id="C" onclick="">
+            <input type="checkbox" id="C" onclick="highlightmaj('#C', 'kc')">
             <label for="C">C</label>
             <br>
-            <input type="checkbox" id="G" onclick="">
+            <input type="checkbox" id="G" onclick="highlightmaj('#G', 'kg')">
             <label for="G">G</label>
             <br>
-            <input type="checkbox" id="D" onclick="">
+            <input type="checkbox" id="D" onclick="highlightmaj('#D', 'kd')">
             <label for="D">D</label>
             <br>
-            <input type="checkbox" id="A" onclick="">
+            <input type="checkbox" id="A" onclick="highlightmaj('#A', 'ka')">
             <label for="A">A</label>
             <br>
-            <input type="checkbox" id="E" onclick="">
+            <input type="checkbox" id="E" onclick="highlightmaj('#E', 'ke')">
             <label for="E">E</label>
             <br>
-            <input type="checkbox" id="B" onclick="">
+            <input type="checkbox" id="B" onclick="highlightmaj('#B', 'kb')">
             <label for="B">B/C♭</label>
             <br>
-            <input type="checkbox" id="Gflat" onclick="">
+            <input type="checkbox" id="Gflat" onclick="highlightmaj('#Gflat', 'kgflat')">
             <label for="Gflat">G♭/F#</label>
             <br>
-            <input type="checkbox" id="Dflat" onclick="">
+            <input type="checkbox" id="Dflat" onclick="highlightmaj('#Dflat', 'kdflat')">
             <label for="Dflat">D♭/C#</label>
             <br>
-            <input type="checkbox" id="Aflat" onclick="">
+            <input type="checkbox" id="Aflat" onclick="highlightmaj('#Aflat', 'kaflat')">
             <label for="Aflat">A♭</label>
             <br>
-            <input type="checkbox" id="Eflat" onclick="">
+            <input type="checkbox" id="Eflat" onclick="highlightmaj('#Eflat', 'keflat')">
             <label for="Eflat">E♭</label>
             <br>
-            <input type="checkbox" id="Bflat" onclick="">
+            <input type="checkbox" id="Bflat" onclick="highlightmaj('#Bflat', 'kbflat')">
             <label for="Bflat">B♭</label>
             <br>
-            <input type="checkbox" id="F" onclick="">
+            <input type="checkbox" id="F" onclick="highlightmaj('#F', 'kf')">
             <label for="F">F</label>
           </div>
-  
+          
+          <!-- CheckBoxes for Minor Keys -->
           <div id="minSelect">
             <span style="font-size: 20px;">Minor Keys</span>
             <br>
-            <input type="checkbox" id="Am" onclick="">
+            <input type="checkbox" id="Am" onclick="highlightmin('#Am', 'kam')">
             <label for="Am">Am</label>
             <br>
-            <input type="checkbox" id="Em" onclick="">
+            <input type="checkbox" id="Em" onclick="highlightmin('#Em', 'kem')">
             <label for="Em">Em</label>
             <br>
-            <input type="checkbox" id="Bm" onclick="">
+            <input type="checkbox" id="Bm" onclick="highlightmin('#Bm', 'kbm')">
             <label for="Bm">Bm</label>
             <br>
-            <input type="checkbox" id="Fsharpm" onclick="">
+            <input type="checkbox" id="Fsharpm" onclick="highlightmin('#Fsharpm', 'kfsharpm')">
             <label for="Fsharpm">F#m</label>
             <br>
-            <input type="checkbox" id="Csharpm" onclick="">
+            <input type="checkbox" id="Csharpm" onclick="highlightmin('#Csharpm', 'kcsharpm')">
             <label for="Csharpm">C#m</label>
             <br>
-            <input type="checkbox" id="Gsharpm" onclick="">
+            <input type="checkbox" id="Gsharpm" onclick="highlightmin('#Gsharpm', 'kgsharpm')">
             <label for="Gsharpm">G#m</label>
             <br>
-            <input type="checkbox" id="Eflatm" onclick="">
+            <input type="checkbox" id="Eflatm" onclick="highlightmin('#Eflatm', 'keflatm')">
             <label for="Eflatm">E♭m</label>
             <br>
-            <input type="checkbox" id="Bflatm" onclick="">
+            <input type="checkbox" id="Bflatm" onclick="highlightmin('#Bflatm', 'kbflatm')">
             <label for="Bflatm">B♭m</label>
             <br>
-            <input type="checkbox" id="Fm" onclick="">
+            <input type="checkbox" id="Fm" onclick="highlightmin('#Fm', 'kfm')">
             <label for="Fflat">Fm</label>
             <br>
-            <input type="checkbox" id="Cm" onclick="">
+            <input type="checkbox" id="Cm" onclick="highlightmin('#Cm', 'kcm')">
             <label for="Cm">Cm</label>
             <br>
-            <input type="checkbox" id="Gm" onclick="">
+            <input type="checkbox" id="Gm" onclick="highlightmin('#Gm', 'kgm')">
             <label for="Gm">Gm</label>
             <br>
-            <input type="checkbox" id="Dm" onclick="">
+            <input type="checkbox" id="Dm" onclick="highlightmin('#Dm', 'kdm')">
             <label for="Dm">Dm</label>
           </div>
         </div>
@@ -220,6 +224,87 @@
     </div>
   </body>
   <script type="text/javascript">
-    
+    // notes in major keys
+    const c = ["cn", "dn", "en", "fn", "gn", "an", "bn", "cn2"];
+    const g = ["gn", "an", "bn", "cn2", "dn2", "en2", "fsharp2", "gn2"];
+    const d = ["dn", "en", "fsharp", "gn", "an", "bn", "csharp2", "dn2"];
+    const a = ["an", "bn", "csharp2", "dn2", "en2", "fsharp2", "gsharp2", "an2"];
+    const e = ["en", "fsharp", "gsharp", "an", "bn", "csharp2", "dsharp2", "en2"];
+    const b = ["bn", "csharp2", "dsharp2", "en2", "fsharp2", "gsharp2", "asharp2", "bn2"];
+    const gflat = ["fsharp", "gsharp", "asharp", "bn", "csharp2", "dsharp2", "fn2", "fsharp2"];
+    const dflat = ["csharp", "dsharp", "fn", "fsharp", "gsharp", "asharp", "cn2", "csharp2"];
+    const aflat = ["gsharp", "asharp", "cn2", "csharp2", "dsharp2", "fn2", "gn2", "gsharp2"];
+    const eflat = ["dsharp", "fn", "gn", "gsharp", "asharp", "cn2", "dn2", "dsharp2"];
+    const bflat = ["asharp", "cn2", "dn2", "dsharp2", "fn2", "gn2", "an2", "asharp2"];
+    const f = ["fn", "gn", "an", "asharp", "cn2", "dn2", "en2", "fn2"];
+
+    // notes in minor keys
+    const am = ["an", "bn", "cn", "dn", "en", "fn", "gn", "an2"];
+    const em = ["en", "fsharp", "gn", "an", "bn", "cn2", "dn2", "en2"];
+    const bm = ["bn", "csharp2", "dn2", "en2", "fsharp2", "gn2", "an2", "bn2"];
+    const fsharpm = ["fsharp", "gsharp", "an", "bn", "csharp2", "dn2", "en2", "fsharp2"];
+    const csharpm = ["csharp", "dsharp", "en", "fsharp", "gsharp", "an", "bn", "csharp2"];
+    const gsharpm = ["gsharp", "asharp", "bn", "csharp2", "dsharp2", "en2", "fsharp2", "gsharp2"];
+    const eflatm = ["dsharp", "fn", "fsharp", "gsharp", "asharp", "bn", "csharp2", "dsharp2"];
+    const bflatm = ["asharp", "cn2", "csharp2", "dsharp2", "fn2", "fsharp2", "gsharp2", "asharp2"];
+    const fm = ["fn", "gn", "gsharp", "asharp", "cn2", "csharp2", "dsharp2", "fn2"];
+    const cm = ["cn", "dn", "dsharp", "fn", "gn", "gsharp", "asharp", "cn2"];
+    const gm = ["gn", "an", "asharp", "cn2", "dn2", "dsharp2", "fn2", "gn2"];
+    const dm = ["dn", "en", "fn", "gn", "an", "asharp", "cn2", "dn2"];
+
+    // major keys in array
+    const maj = ["kc", "kg", "kd", "ka", "ke", "kb", "kgflat", "kdflat", "kaflat", "keflat", "kbflat", "kf"];
+    const majArr = [c, g, d, a, e, b, gflat, dflat, aflat, eflat, bflat, f];
+    // minor keys in array
+    const min = ["kam", "kem", "kbm", "kfsharpm", "kcsharpm", "kgsharpm", "keflatm", "kbflatm", "kfm", "kcm", "kgm", "kdm"];
+    const minArr = [am, em, bm, fsharpm, csharpm, gsharpm, eflatm, bflatm, fm, cm, gm, dm];
+
+
+
+    // handles highlighting of the major keys
+    function highlightmaj(cName, kName) {
+      if (document.querySelector(cName).checked) {
+        $("#" + kName).css("background-color", "green");
+        var i = 0;
+        while (maj[i] != kName) {
+          i++;
+        }
+        for (const s of majArr[i]) {
+          $('[name="' + s + '"]').css("background-color", "green");
+        }
+      } else {
+        $("#" + kName).css("background-color", "");
+        var i = 0;
+        while (maj[i] != kName) {
+          i++;
+        }
+        for (const s of majArr[i]) {
+          $('[name="' + s + '"]').css("background-color", "");
+        }
+      }
+    }
+
+    // handles highlighting of the minor keys
+    function highlightmin(cName, kName) {
+      if (document.querySelector(cName).checked) {
+        $("#" + kName).css("background-color", "red");
+        var i = 0;
+        while (min[i] != kName) {
+          i++;
+        }
+        for (const s of minArr[i]) {
+          $('[name="' + s + '"]').css("background-color", "red");
+        }
+      } else {
+        $("#" + kName).css("background-color", "");
+        var i = 0;
+        while (min[i] != kName) {
+          i++;
+        }
+        for (const s of minArr[i]) {
+          $('[name="' + s + '"]').css("background-color", "");
+        }
+      }
+    }
   </script>
 </html>
